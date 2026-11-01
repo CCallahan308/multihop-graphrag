@@ -1,5 +1,7 @@
 # Direct runtime versions used for local app verification.
 streamlit==1.57.0
+# Streamlit 1.57 subclasses gzip responders changed in Starlette 1.8.
+starlette==1.7.0
 kuzu==0.11.3
 lancedb==0.41.0
 pydantic==2.13.3
