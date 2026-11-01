@@ -1,0 +1,22 @@
+[theme]
+base = "light"
+primaryColor = "#142b24"
+backgroundColor = "#f6f8f4"
+secondaryBackgroundColor = "#eaf0e9"
+textColor = "#142b24"
+borderColor = "#d3ddd4"
+font = "General Sans:https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap"
+headingFont = "Cabinet Grotesk:https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800&display=swap"
+headingFontWeights = 800
+baseRadius = "4px"
+buttonRadius = "4px"
+showWidgetBorder = true
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+headless = true

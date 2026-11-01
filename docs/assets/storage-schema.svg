@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title description">
+  <title id="title">Multi-Hop GraphRAG storage schema</title>
+  <desc id="description">Kuzu has Entity and Chunk node tables. Directed RELATION edges connect entities and store predicate, weight, and source_chunk_id. MENTIONED_IN edges connect entities to chunks without edge properties. LanceDB has entity_vectors and chunk_vectors tables with the corresponding identifiers, metadata, and vectors.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="m1 1 8 4-8 4" fill="none" stroke="#526259" stroke-width="1.5"/></marker></defs>
+  <rect width="1200" height="850" fill="#f6f8f4"/>
+  <text x="48" y="61" font-family="'Cabinet Grotesk','General Sans',Arial,sans-serif" font-size="36" font-weight="800" letter-spacing="-1.1" fill="#142b24">Storage schema</text>
+  <text x="48" y="94" font-family="'General Sans',Arial,sans-serif" font-size="16" fill="#526259">Shared entity names and chunk IDs connect the graph and vector indexes.</text>
+  <path d="M48 116H1152" stroke="#d3ddd4"/>
+  <rect x="48" y="148" width="610" height="638" rx="4" fill="#eaf0e9"/>
+  <rect x="710" y="148" width="442" height="638" rx="4" fill="#eaf0e9"/>
+  <g font-family="'Cabinet Grotesk','General Sans',Arial,sans-serif" font-size="27" font-weight="800" letter-spacing="-.6" fill="#142b24"><text x="72" y="190">Kuzu</text><text x="734" y="190">LanceDB</text></g>
+  <g font-family="'General Sans',Arial,sans-serif" font-size="14" fill="#526259"><text x="72" y="215">Graph nodes and directed edges</text><text x="734" y="215">Vector tables</text></g>
+  <g fill="#fff" stroke="#c1d0c4"><rect x="72" y="242" width="216" height="170" rx="4"/><rect x="420" y="242" width="214" height="170" rx="4"/><rect x="72" y="526" width="254" height="170" rx="4"/><rect x="734" y="242" width="394" height="210" rx="4"/><rect x="734" y="478" width="394" height="210" rx="4"/></g>
+  <g fill="#d5f36b"><path d="M76 242H284Q288 242 288 246V286H72V246Q72 242 76 242Z"/><path d="M424 242H630Q634 242 634 246V286H420V246Q420 242 424 242Z"/></g>
+  <g stroke="#d3ddd4"><path d="M72 286H288M420 286H634M72 570H326M734 286H1128M734 522H1128"/></g>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#142b24" font-size="19" font-weight="600"><text x="90" y="271">Entity / source</text><text x="438" y="271">Entity / target</text><text x="90" y="555">Chunk</text><text x="754" y="271">entity_vectors</text><text x="754" y="507">chunk_vectors</text></g>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#142b24" font-size="16">
+    <text x="90" y="317">name</text><text x="90" y="349">type</text><text x="90" y="381">description</text>
+    <text x="438" y="317">name</text><text x="438" y="349">type</text><text x="438" y="381">description</text>
+    <text x="90" y="601">chunk_id</text><text x="90" y="633">text</text><text x="90" y="665">doc_title</text>
+    <text x="754" y="317">name</text><text x="754" y="349">type</text><text x="754" y="381">description</text><text x="754" y="413">vector</text>
+    <text x="754" y="553">chunk_id</text><text x="754" y="585">text</text><text x="754" y="617">doc_title</text><text x="754" y="649">vector</text>
+  </g>
+  <g font-family="'General Sans',Arial,sans-serif" font-size="14" fill="#526259"><text x="268" y="317" text-anchor="end">PK</text><text x="614" y="317" text-anchor="end">PK</text><text x="306" y="601" text-anchor="end">PK</text><text x="1108" y="413" text-anchor="end">384 dimensions*</text><text x="1108" y="649" text-anchor="end">384 dimensions*</text></g>
+  <g fill="none" stroke="#526259" stroke-width="1.4" marker-end="url(#arrow)"><path d="M288 314H420"/><path d="M180 412V526"/></g>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#142b24" font-size="14" font-weight="600"><text x="354" y="300" text-anchor="middle">RELATION</text><text x="198" y="459">MENTIONED_IN</text></g>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#526259" font-size="14"><text x="354" y="343" text-anchor="middle">predicate</text><text x="354" y="366" text-anchor="middle">weight</text><text x="354" y="389" text-anchor="middle">source_chunk_id</text><text x="198" y="483">No edge properties</text><text x="72" y="733">Source and target use the same Entity node table.</text><text x="72" y="757">Relation weight stores extraction confidence.</text><text x="734" y="733">Shared keys: name and chunk_id.</text><text x="734" y="757">* Default hash-projection provider.</text></g>
+  <text x="1152" y="822" text-anchor="end" font-family="'General Sans',Arial,sans-serif" font-size="14" fill="#526259">CGC Labs / Independent engineering demonstration</text>
+</svg>

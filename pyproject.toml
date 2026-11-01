@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multihop-graphrag"
+version = "0.1.0"
+description = "Multi-Hop GraphRAG system combining structured knowledge graph traversal with dense vector retrieval"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.7.0",
+    "kuzu>=0.11.3",
+    "lancedb>=0.41.0",
+    "numpy>=1.24.0",
+    "datasets>=2.14.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+app = ["streamlit==1.57.0"]
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.setuptools.package-data]
+src = ["report_template.html", "assets/cgc-labs-logo.png", "assets/architecture.svg", "assets/storage-schema.svg", "assets/demo-route.svg"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

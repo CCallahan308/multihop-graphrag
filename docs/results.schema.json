@@ -1,0 +1,224 @@
+{
+  "$defs": {
+    "BenchmarkRecord": {
+      "additionalProperties": false,
+      "description": "One evaluated question and its retrieved evidence for one system.",
+      "properties": {
+        "sample_id": {
+          "minLength": 1,
+          "title": "Sample Id",
+          "type": "string"
+        },
+        "question": {
+          "minLength": 1,
+          "title": "Question",
+          "type": "string"
+        },
+        "gold_answer": {
+          "title": "Gold Answer",
+          "type": "string"
+        },
+        "predicted_answer": {
+          "title": "Predicted Answer",
+          "type": "string"
+        },
+        "gold_chunks": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Gold Chunks",
+          "type": "array"
+        },
+        "retrieved_chunks": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Retrieved Chunks",
+          "type": "array"
+        },
+        "multi_hop_recall": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Multi Hop Recall",
+          "type": "number"
+        },
+        "mrr_at_5": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Mrr At 5",
+          "type": "number"
+        },
+        "exact_match": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Exact Match",
+          "type": "number"
+        },
+        "token_f1": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Token F1",
+          "type": "number"
+        },
+        "faithfulness": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Faithfulness",
+          "type": "number"
+        }
+      },
+      "required": [
+        "sample_id",
+        "question",
+        "gold_answer",
+        "predicted_answer",
+        "gold_chunks",
+        "retrieved_chunks",
+        "multi_hop_recall",
+        "mrr_at_5",
+        "exact_match",
+        "token_f1",
+        "faithfulness"
+      ],
+      "title": "BenchmarkRecord",
+      "type": "object"
+    },
+    "ReportMetrics": {
+      "additionalProperties": false,
+      "description": "Aggregate proportions in [0, 1], with a nonnegative sample count.",
+      "properties": {
+        "total_samples": {
+          "minimum": 0,
+          "title": "Total Samples",
+          "type": "integer"
+        },
+        "multi_hop_recall": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Multi Hop Recall",
+          "type": "number"
+        },
+        "mrr_at_5": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Mrr At 5",
+          "type": "number"
+        },
+        "exact_match": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Exact Match",
+          "type": "number"
+        },
+        "token_f1": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Token F1",
+          "type": "number"
+        },
+        "faithfulness": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Faithfulness",
+          "type": "number"
+        }
+      },
+      "required": [
+        "total_samples",
+        "multi_hop_recall",
+        "mrr_at_5",
+        "exact_match",
+        "token_f1",
+        "faithfulness"
+      ],
+      "title": "ReportMetrics",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Versioned export of a single comparative run, including both systems.",
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "dataset_kind": {
+      "enum": [
+        "synthetic",
+        "jsonl",
+        "huggingface"
+      ],
+      "title": "Dataset Kind",
+      "type": "string"
+    },
+    "dataset_label": {
+      "minLength": 1,
+      "title": "Dataset Label",
+      "type": "string"
+    },
+    "sample_count": {
+      "minimum": 0,
+      "title": "Sample Count",
+      "type": "integer"
+    },
+    "document_count": {
+      "minimum": 0,
+      "title": "Document Count",
+      "type": "integer"
+    },
+    "embedding_provider": {
+      "minLength": 1,
+      "title": "Embedding Provider",
+      "type": "string"
+    },
+    "generation_mode": {
+      "minLength": 1,
+      "title": "Generation Mode",
+      "type": "string"
+    },
+    "graphrag": {
+      "$ref": "#/$defs/ReportMetrics"
+    },
+    "plain_rag": {
+      "$ref": "#/$defs/ReportMetrics"
+    },
+    "graphrag_records": {
+      "items": {
+        "$ref": "#/$defs/BenchmarkRecord"
+      },
+      "title": "Graphrag Records",
+      "type": "array"
+    },
+    "plain_rag_records": {
+      "items": {
+        "$ref": "#/$defs/BenchmarkRecord"
+      },
+      "title": "Plain Rag Records",
+      "type": "array"
+    }
+  },
+  "required": [
+    "generated_at",
+    "dataset_kind",
+    "dataset_label",
+    "sample_count",
+    "document_count",
+    "embedding_provider",
+    "generation_mode",
+    "graphrag",
+    "plain_rag",
+    "graphrag_records",
+    "plain_rag_records"
+  ],
+  "title": "BenchmarkReport",
+  "type": "object"
+}

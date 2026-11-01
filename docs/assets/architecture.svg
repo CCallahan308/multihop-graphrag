@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title description">
+  <title id="title">Multi-Hop GraphRAG architecture</title>
+  <desc id="description">Documents become deterministic passages. Rule extraction and entity canonicalization populate Kuzu and LanceDB. Questions use seed linking, graph traversal, and dense passage search. Rank fusion supplies context, while traversal paths also reach heuristic answer extraction. Evaluation records metrics and per-query evidence.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="m1 1 8 4-8 4" fill="none" stroke="#526259" stroke-width="1.5"/></marker></defs>
+  <rect width="1200" height="900" fill="#f6f8f4"/>
+  <g font-family="'Cabinet Grotesk','General Sans',Arial,sans-serif" fill="#142b24" font-weight="800" letter-spacing="-1.1"><text x="48" y="61" font-size="36">Multi-Hop GraphRAG</text></g>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#526259" font-size="16"><text x="48" y="94">Build two indexes. Retrieve connected evidence. Compare the answers.</text></g>
+  <path d="M48 116H1152M48 420H1152M48 862H1152" stroke="#d3ddd4"/>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#142b24" font-size="18" font-weight="600"><text x="48" y="154">01 / Build the indexes</text><text x="48" y="459">02 / Retrieve and answer</text></g>
+  <g fill="#fff" stroke="#d3ddd4"><rect x="48" y="210" width="170" height="76" rx="4"/><rect x="254" y="210" width="218" height="76" rx="4"/><rect x="508" y="210" width="276" height="76" rx="4"/></g>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#142b24" font-size="19" font-weight="600"><text x="68" y="254">Documents</text><text x="274" y="242">Deterministic</text><text x="274" y="266">passages</text><text x="528" y="242">Rule extraction</text></g>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#526259" font-size="15"><text x="528" y="266">Entity canonicalization</text><text x="254" y="321">Chunk IDs connect both stores.</text></g>
+  <g fill="none" stroke="#526259" stroke-width="1.4" marker-end="url(#arrow)"><path d="M218 248H254"/><path d="M472 248H508"/><path d="M784 248H820"/></g>
+  <rect x="820" y="174" width="332" height="212" rx="4" fill="#eaf0e9"/>
+  <text x="840" y="200" font-family="'General Sans',Arial,sans-serif" font-size="14" fill="#526259" font-weight="600">DUAL INDEXES</text>
+  <g fill="#f6f8f4" stroke="#c1d0c4"><rect x="840" y="216" width="292" height="66" rx="4"/><rect x="840" y="298" width="292" height="66" rx="4"/></g>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#142b24" font-size="18" font-weight="600"><text x="858" y="242">Kuzu graph</text><text x="858" y="324">LanceDB vectors</text></g>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#526259" font-size="14"><text x="858" y="265">Entities, chunks, relationships</text><text x="858" y="347">Entity and passage vectors</text></g>
+  <g fill="#fff" stroke="#d3ddd4"><rect x="48" y="500" width="170" height="78" rx="4"/><rect x="254" y="500" width="218" height="78" rx="4"/><rect x="508" y="500" width="252" height="78" rx="4"/><rect x="254" y="650" width="506" height="78" rx="4"/><rect x="1010" y="552" width="142" height="110" rx="4"/><rect x="820" y="770" width="332" height="66" rx="4"/></g>
+  <rect x="820" y="552" width="154" height="110" rx="4" fill="#d5f36b" stroke="#a5c34d"/>
+  <g fill="none" stroke="#526259" stroke-width="1.4" marker-end="url(#arrow)">
+    <path d="M218 539H254"/><path d="M472 539H508"/>
+    <path d="M133 578V689H254"/>
+    <path d="M760 539H792V582H820"/><path d="M760 689H792V634H820"/>
+    <path d="M974 607H1010"/><path d="M634 500V480H1081V552"/>
+    <path d="M1081 662V738H986V770"/>
+  </g>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#142b24" font-size="18" font-weight="600"><text x="68" y="545">Question</text><text x="274" y="531">Seed linking</text><text x="528" y="531">Graph traversal</text><text x="274" y="682">Dense passage search</text><text x="840" y="596">Rank fusion</text><text x="1030" y="584">Heuristic</text><text x="1030" y="609">answer</text><text x="840" y="797">Evaluation</text></g>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#526259" font-size="14"><text x="274" y="555">Lexical + entity vectors</text><text x="528" y="555">Kuzu / 1–3 hops</text><text x="274" y="707">LanceDB / top 10 passage candidates</text><text x="840" y="624" fill="#142b24">k = 60 / top 5</text><text x="1030" y="641">Target span</text><text x="840" y="820">Metrics + per-query evidence</text><text x="841" y="473">Traversal paths</text></g>
+  <g font-family="'General Sans',Arial,sans-serif" fill="#526259" font-size="14"><text x="48" y="801">Vector baseline:</text><text x="48" y="825">Dense retrieval → same answer extractor.</text><text x="48" y="848">No graph traversal paths.</text></g>
+  <text x="1152" y="884" text-anchor="end" font-family="'General Sans',Arial,sans-serif" font-size="14" fill="#526259">CGC Labs / Independent engineering demonstration</text>
+</svg>

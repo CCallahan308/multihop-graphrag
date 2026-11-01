@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-30T22:58:44.426794Z",
+  "dataset_kind": "synthetic",
+  "dataset_label": "Built-in synthetic smoke test",
+  "sample_count": 3,
+  "document_count": 11,
+  "embedding_provider": "Hash projection, 384 dimensions",
+  "generation_mode": "Heuristic span extraction",
+  "graphrag": {
+    "total_samples": 3,
+    "multi_hop_recall": 1.0,
+    "mrr_at_5": 1.0,
+    "exact_match": 1.0,
+    "token_f1": 1.0,
+    "faithfulness": 1.0
+  },
+  "plain_rag": {
+    "total_samples": 3,
+    "multi_hop_recall": 0.0,
+    "mrr_at_5": 0.8333333333333334,
+    "exact_match": 0.0,
+    "token_f1": 0.0,
+    "faithfulness": 1.0
+  },
+  "graphrag_records": [
+    {
+      "sample_id": "musique_hop2_001",
+      "question": "Which city was the founder of Company X born in?",
+      "gold_answer": "Chicago",
+      "predicted_answer": "Chicago",
+      "gold_chunks": [
+        "df951955ae07d5f7",
+        "1a5936ffd54e785d"
+      ],
+      "retrieved_chunks": [
+        "df951955ae07d5f7",
+        "cad96478a973cd00",
+        "1a5936ffd54e785d",
+        "1f7e1d3d6b50d862",
+        "1260ab65b0452e7c"
+      ],
+      "multi_hop_recall": 1.0,
+      "mrr_at_5": 1.0,
+      "exact_match": 1.0,
+      "token_f1": 1.0,
+      "faithfulness": 1.0
+    },
+    {
+      "sample_id": "musique_hop2_002",
+      "question": "What award did the director of Solaris win?",
+      "gold_answer": "Grand Prix Spécial du Jury",
+      "predicted_answer": "Grand Prix Spécial du Jury",
+      "gold_chunks": [
+        "5b6006253f6c8ea0",
+        "ba8fe32e468ec1ea"
+      ],
+      "retrieved_chunks": [
+        "5b6006253f6c8ea0",
+        "9048c241995eaa27",
+        "ba8fe32e468ec1ea",
+        "cad96478a973cd00",
+        "1f7e1d3d6b50d862"
+      ],
+      "multi_hop_recall": 1.0,
+      "mrr_at_5": 1.0,
+      "exact_match": 1.0,
+      "token_f1": 1.0,
+      "faithfulness": 1.0
+    },
+    {
+      "sample_id": "musique_hop3_003",
+      "question": "Which country is the university where the inventor of Dynamo studied located in?",
+      "gold_answer": "United Kingdom",
+      "predicted_answer": "United Kingdom",
+      "gold_chunks": [
+        "1f7e1d3d6b50d862",
+        "abd8ef732ded48ed",
+        "1260ab65b0452e7c"
+      ],
+      "retrieved_chunks": [
+        "1f7e1d3d6b50d862",
+        "1260ab65b0452e7c",
+        "abd8ef732ded48ed",
+        "9048c241995eaa27",
+        "cad96478a973cd00"
+      ],
+      "multi_hop_recall": 1.0,
+      "mrr_at_5": 1.0,
+      "exact_match": 1.0,
+      "token_f1": 1.0,
+      "faithfulness": 1.0
+    }
+  ],
+  "plain_rag_records": [
+    {
+      "sample_id": "musique_hop2_001",
+      "question": "Which city was the founder of Company X born in?",
+      "gold_answer": "Chicago",
+      "predicted_answer": "John Doe",
+      "gold_chunks": [
+        "df951955ae07d5f7",
+        "1a5936ffd54e785d"
+      ],
+      "retrieved_chunks": [
+        "df951955ae07d5f7",
+        "cad96478a973cd00",
+        "1f7e1d3d6b50d862",
+        "1260ab65b0452e7c",
+        "9048c241995eaa27"
+      ],
+      "multi_hop_recall": 0.0,
+      "mrr_at_5": 1.0,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "faithfulness": 1.0
+    },
+    {
+      "sample_id": "musique_hop2_002",
+      "question": "What award did the director of Solaris win?",
+      "gold_answer": "Grand Prix Spécial du Jury",
+      "predicted_answer": "Chicago",
+      "gold_chunks": [
+        "5b6006253f6c8ea0",
+        "ba8fe32e468ec1ea"
+      ],
+      "retrieved_chunks": [
+        "cad96478a973cd00",
+        "5b6006253f6c8ea0",
+        "1f7e1d3d6b50d862",
+        "1260ab65b0452e7c",
+        "9048c241995eaa27"
+      ],
+      "multi_hop_recall": 0.0,
+      "mrr_at_5": 0.5,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "faithfulness": 1.0
+    },
+    {
+      "sample_id": "musique_hop3_003",
+      "question": "Which country is the university where the inventor of Dynamo studied located in?",
+      "gold_answer": "United Kingdom",
+      "predicted_answer": "Michael Faraday",
+      "gold_chunks": [
+        "1f7e1d3d6b50d862",
+        "abd8ef732ded48ed",
+        "1260ab65b0452e7c"
+      ],
+      "retrieved_chunks": [
+        "1f7e1d3d6b50d862",
+        "9048c241995eaa27",
+        "cad96478a973cd00",
+        "267f8608d5dee3b0",
+        "1260ab65b0452e7c"
+      ],
+      "multi_hop_recall": 0.0,
+      "mrr_at_5": 1.0,
+      "exact_match": 0.0,
+      "token_f1": 0.0,
+      "faithfulness": 1.0
+    }
+  ]
+}
